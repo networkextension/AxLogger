@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #import <asl.h>
+#import <Foundation/Foundation.h>
 typedef enum{
     ylog_level_info,
     ylog_level_debug,
@@ -36,4 +37,5 @@ void ylog_log3(ylog_context *ctx,char *category,char *file,int line,ylog_level l
 #define ylog_log4(ctx,category,level,fmt,...) do{ylog_log3(ctx,category,__FILE__,__LINE__,level,fmt,##__VA_ARGS__);}while(0)
 void ylog_close(ylog_context *ctx);
 uint64_t reportMemoryUsed();
+NSString* objectClassString(id obj);
 #endif /* defined(__ylog__ylog__) */

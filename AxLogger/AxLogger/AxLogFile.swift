@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CLog
+
 typealias AxLoggerCompleteCb = (Void) -> Void
 
 class AxLogFile{

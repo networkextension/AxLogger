@@ -89,3 +89,10 @@ uint64_t reportMemoryUsed()
     //return static_cast<size_t>(-1);
     
 }
+
+NSString* objectClassString(id obj)
+{
+    NSString *s =  NSStringFromClass([obj class]);
+    NSArray *array = [s componentsSeparatedByString:@"."];
+    return array.lastObject;
+}
