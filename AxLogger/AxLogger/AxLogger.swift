@@ -138,8 +138,8 @@ class AxLogDefaultFormater:AxLogFormater{
 }
 
 public class AxLogger:NSObject{
-    static var groupURL = URL.init(string: "http://abigt.net")!
-    static var applog:AxLogFile = {
+    public static var groupURL = URL.init(string: "http://abigt.net")!
+    public static var applog:AxLogFile = {
         var urlContain:URL?
         #if os(iOS)
              //let c  = FileManager.default.containerURLForSecurityApplicationGroupIdentifier("group.com.yarshure.Surf")
@@ -178,14 +178,14 @@ public class AxLogger:NSObject{
         applog.reopen()
         //applog.log("resetLogFile 111")
     }
-    static func openLogging(baseURL:URL, date:Date){
+    public static func openLogging(_ baseURL:URL, date:Date){
         #if DEBUG
             reopenStdout(baseURL: baseURL)
         #endif
         let u  = groupURL.appendingPathComponent("Log")
         applog.openLogging(date: date ,path:u.path)
     }
-    static var logleve:AxLoggerLevel = .Info
+    public  static var logleve:AxLoggerLevel = .Info
     
     static var logFormater = AxLogDefaultFormater()//= .Debug
     @objc static public func log(_ msg:String,level:AxLoggerLevel , category:String="default",file:String=#file,line:Int=#line,ud:[String:String]=[:],tags:[String]=[],time:Date=Date()){
