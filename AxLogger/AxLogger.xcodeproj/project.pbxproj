@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691883611DDEA7A10051DAAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691883601DDEA7A10051DAAE /* AppDelegate.swift */; };
+		691883631DDEA7A10051DAAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691883621DDEA7A10051DAAE /* ViewController.swift */; };
+		691883661DDEA7A10051DAAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691883641DDEA7A10051DAAE /* Main.storyboard */; };
+		691883681DDEA7A10051DAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691883671DDEA7A10051DAAE /* Assets.xcassets */; };
+		6918836B1DDEA7A10051DAAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691883691DDEA7A10051DAAE /* LaunchScreen.storyboard */; };
+		691883721DDEA7AD0051DAAE /* AxLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; };
+		691883731DDEA8EC0051DAAE /* AxLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; };
+		691883741DDEA8EC0051DAAE /* AxLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		698A07E51DD59D73009BFFC9 /* ylog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2981DD5992700227353 /* ylog.m */; };
 		698A07E61DD59D78009BFFC9 /* ylog.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2991DD5992700227353 /* ylog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69A0D28A1DD598F200227353 /* AxLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2881DD598F200227353 /* AxLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,7 +25,38 @@
 		69A0D2C31DD59CC000227353 /* String+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2C21DD59CC000227353 /* String+file.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		691883701DDEA7A90051DAAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A0D27C1DD598F200227353 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69A0D2841DD598F200227353;
+			remoteInfo = AxLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		691883751DDEA8EC0051DAAE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				691883741DDEA8EC0051DAAE /* AxLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6918835E1DDEA7A00051DAAE /* AxLoggerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AxLoggerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		691883601DDEA7A10051DAAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		691883621DDEA7A10051DAAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		691883651DDEA7A10051DAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		691883671DDEA7A10051DAAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6918836A1DDEA7A10051DAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6918836C1DDEA7A10051DAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A0D2851DD598F200227353 /* AxLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A0D2881DD598F200227353 /* AxLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxLogger.h; sourceTree = "<group>"; };
 		69A0D2891DD598F200227353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +70,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6918835B1DDEA7A00051DAAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691883721DDEA7AD0051DAAE /* AxLogger.framework in Frameworks */,
+				691883731DDEA8EC0051DAAE /* AxLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69A0D2811DD598F200227353 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6918835F1DDEA7A10051DAAE /* AxLoggerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				691883601DDEA7A10051DAAE /* AppDelegate.swift */,
+				691883621DDEA7A10051DAAE /* ViewController.swift */,
+				691883641DDEA7A10051DAAE /* Main.storyboard */,
+				691883671DDEA7A10051DAAE /* Assets.xcassets */,
+				691883691DDEA7A10051DAAE /* LaunchScreen.storyboard */,
+				6918836C1DDEA7A10051DAAE /* Info.plist */,
+			);
+			path = AxLoggerDemo;
+			sourceTree = "<group>";
+		};
 		69A0D27B1DD598F200227353 = {
 			isa = PBXGroup;
 			children = (
 				69A0D2871DD598F200227353 /* AxLogger */,
+				6918835F1DDEA7A10051DAAE /* AxLoggerDemo */,
 				69A0D2861DD598F200227353 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				69A0D2851DD598F200227353 /* AxLogger.framework */,
+				6918835E1DDEA7A00051DAAE /* AxLoggerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +151,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6918835D1DDEA7A00051DAAE /* AxLoggerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6918836F1DDEA7A10051DAAE /* Build configuration list for PBXNativeTarget "AxLoggerDemo" */;
+			buildPhases = (
+				6918835A1DDEA7A00051DAAE /* Sources */,
+				6918835B1DDEA7A00051DAAE /* Frameworks */,
+				6918835C1DDEA7A00051DAAE /* Resources */,
+				691883751DDEA8EC0051DAAE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				691883711DDEA7A90051DAAE /* PBXTargetDependency */,
+			);
+			name = AxLoggerDemo;
+			productName = AxLoggerDemo;
+			productReference = 6918835E1DDEA7A00051DAAE /* AxLoggerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		69A0D2841DD598F200227353 /* AxLogger */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69A0D28D1DD598F200227353 /* Build configuration list for PBXNativeTarget "AxLogger" */;
@@ -112,9 +194,15 @@
 		69A0D27C1DD598F200227353 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kong XiangBo";
 				TargetAttributes = {
+					6918835D1DDEA7A00051DAAE = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 745WQDK4L7;
+						ProvisioningStyle = Automatic;
+					};
 					69A0D2841DD598F200227353 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 745WQDK4L7;
@@ -129,6 +217,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 69A0D27B1DD598F200227353;
 			productRefGroup = 69A0D2861DD598F200227353 /* Products */;
@@ -136,11 +225,22 @@
 			projectRoot = "";
 			targets = (
 				69A0D2841DD598F200227353 /* AxLogger */,
+				6918835D1DDEA7A00051DAAE /* AxLoggerDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6918835C1DDEA7A00051DAAE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6918836B1DDEA7A10051DAAE /* LaunchScreen.storyboard in Resources */,
+				691883681DDEA7A10051DAAE /* Assets.xcassets in Resources */,
+				691883661DDEA7A10051DAAE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69A0D2831DD598F200227353 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +251,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6918835A1DDEA7A00051DAAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				691883631DDEA7A10051DAAE /* ViewController.swift in Sources */,
+				691883611DDEA7A10051DAAE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69A0D2801DD598F200227353 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,7 +275,62 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		691883711DDEA7A90051DAAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69A0D2841DD598F200227353 /* AxLogger */;
+			targetProxy = 691883701DDEA7A90051DAAE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		691883641DDEA7A10051DAAE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				691883651DDEA7A10051DAAE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		691883691DDEA7A10051DAAE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6918836A1DDEA7A10051DAAE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		6918836D1DDEA7A10051DAAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 745WQDK4L7;
+				INFOPLIST_FILE = AxLoggerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLoggerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6918836E1DDEA7A10051DAAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 745WQDK4L7;
+				INFOPLIST_FILE = AxLoggerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLoggerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		69A0D28B1DD598F200227353 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -314,6 +478,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6918836F1DDEA7A10051DAAE /* Build configuration list for PBXNativeTarget "AxLoggerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6918836D1DDEA7A10051DAAE /* Debug */,
+				6918836E1DDEA7A10051DAAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		69A0D27F1DD598F200227353 /* Build configuration list for PBXProject "AxLogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -29,56 +29,17 @@ import Foundation
         }
     }
 }
-func createLogDir(){
-    
-}
+
 func reopenStdout(baseURL:URL){
-    //    NSString *path=[[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"log.txt"];
-    //    char *p =(char*)[path UTF8String];
-    //    freopen( p, "w", stdout);
-    //    if !log_ENABLE_REOPEN {
-    //        return
-    //    }
-    if let info = Bundle.main.infoDictionary, let appid =  info["CFBundleIdentifier"] as? String{
-        if appid != "com.yarshure.Surf.PacketTunnel" {
-            return
-        }
-        
-    }
-    createLogDir()
-    let date = Date()
-    let df = DateFormatter()
-    df.dateFormat = "yyyy_MM_dd_HH_mm_ss"
-    let string = df.string(from: date)
-    let url = baseURL.appendingPathComponent("Log/\(string)_stdout.log")
-    
-    
-    //let url1 = groupContainerURL.appendingPathComponent("Log/\(string).log")
-    
+    let url = baseURL.appendingPathComponent("stdout.log")
     let path = url.path
         let x = path.cString(using: String.Encoding.utf8)
-        //let p:UnsafePointer<Int8> = UnsafePointer.in
-        
+        freopen(x!, "w", stdout)
         freopen(x!, "w", stderr)
-        
-        // let x2 = url1.path!.cStringUsingEncoding(NSUTF8StringEncoding)
-        // freopen(x2!, "w", stderr)
-        
-        //NSLog("######################### reopen ok")
-        
-        
         
 }
 
 
-//public struct StderrStream: OutputStreamType {
-//    static var shared = StderrStream()
-//    public func write(string: String) {
-//        fputs(string, stderr)
-//    }
-//}
-
-/// SimpleTunnel errors
 protocol AxLogFormater{
     func formate(msg:String,level:AxLoggerLevel,category:String,file:String,line:Int,ud:[String:String],tags:[String],time:Date) -> String
 }
@@ -107,6 +68,8 @@ class AxLogDefaultFormater:AxLogFormater{
         f.dateFormat="HH:mm:ss.SSS"
         return f
     }()
+    var debugEnable:Bool = false
+    
     func formate(msg:String,level:AxLoggerLevel,category:String,file:String,line:Int,ud:[String:String],tags:[String],time:Date) -> String{
         let timestr = self.df.string(from: time)
         
@@ -127,43 +90,20 @@ class AxLogDefaultFormater:AxLogFormater{
 //        }else {
 //            
 //        }
-        #if DEBUG
+        if debugEnable{
             result = "\(timestr) \(level.description) [\(processinfo.processIdentifier):\(threadid)] mem:\(memory) \(msg) " //\(category) \(filename)[\(line)]
-        #else
+        }else{
             result = "\(timestr) \(level.description) mem:\(memory) \(msg)  "
-        #endif
+        }
         
         return result
     }
 }
 
 public class AxLogger:NSObject{
-    public static var groupURL = URL.init(string: "http://abigt.net")!
+    
     public static var applog:AxLogFile = {
-        var urlContain:URL?
-        #if os(iOS)
-             //let c  = FileManager.default.containerURLForSecurityApplicationGroupIdentifier("group.com.yarshure.Surf")
-             urlContain = groupURL.appendingPathComponent("Log")
-            
-        #else
-            
-            //NSString *groupContainer = [@"~/../../../Group Containers/TEAM_ID.com.Company.AppName" stringByExpandingTildeInPath];
-            let c = FileManager.default.containerURLForSecurityApplicationGroupIdentifier("745WQDK4L7.com.yarshure.Surf")
-            urlContain = c!.appendingPathComponent("Library/Application Support/Log")
-        #endif
-        
-        guard let x = urlContain else {
-            return AxLogFile(name: "applog",ext:"log", dir:"")
-        }
-        
-        let dir = urlContain!.path
-        #if (arch(i386) || arch(x86_64))
-            let header = ["os":"simulator"]
-        #else
-            let header = AxEnvHelper.infoDict()
-        #endif
-        NSLog("logdir %@", dir)
-        var logger = AxLogFile(name: "applog",ext:"log", dir:dir)
+        var logger = AxLogFile(name: "applog",ext:"log", dir:"")
         //logger.enableConsole(true)
         return logger
     }()
@@ -178,12 +118,19 @@ public class AxLogger:NSObject{
         applog.reopen()
         //applog.log("resetLogFile 111")
     }
-    public static func openLogging(_ baseURL:URL, date:Date){
-        #if DEBUG
-            reopenStdout(baseURL: baseURL)
-        #endif
-        let u  = groupURL.appendingPathComponent("Log")
+    public static func openLogging(_ baseURL:URL, date:Date,debug:Bool=false){
+        let f:DateFormatter=DateFormatter()
+        //f.dateFormat="yyyy/MM/dd HH:mm:ss.SSS" file name contain date
+        f.dateFormat="HH_mm_ss"
+        let session = f.string(from: date)
+        let u  = baseURL.appendingPathComponent("Log/" + session + "/")
+        
+        //applog will create log dir
         applog.openLogging(date: date ,path:u.path)
+        
+        if debug{
+            reopenStdout(baseURL: u)
+        }
     }
     public  static var logleve:AxLoggerLevel = .Info
     
@@ -192,13 +139,13 @@ public class AxLogger:NSObject{
         
         //other level
         
-        #if DEBUG
+        if self.logFormater.debugEnable{
             applog.log(msg: self.logFormater.formate(msg: msg, level: level, category: category, file: file, line: line, ud: ud, tags: tags, time: time))
-        #else
+        }else {
             if level.rawValue <= self.logleve.rawValue {
                 applog.log(msg: self.logFormater.formate(msg: msg, level: level, category: category, file: file, line: line, ud: ud, tags: tags, time: time))
             }
-        #endif
+        }
     }
     
     @objc static public func enableConsole(enable:Bool){

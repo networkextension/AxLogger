@@ -34,7 +34,7 @@ public class AxLogFile{
         self.dir = dir
         self.ext = ext
         
-        if !self.dir.fileExist(){_ = self.dir.dirCreate()}
+        //if !self.dir.fileExist(){_ = self.dir.dirCreate()}
         self.queue=DispatchQueue(label:"axlogger.queue.\(name)")
         self.logpath = "\(self.dir)/\(self.name).\(ext)"
         //self.openLog()
