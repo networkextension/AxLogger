@@ -23,6 +23,14 @@
 		69A0D2951DD5990F00227353 /* AxLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2921DD5990F00227353 /* AxLogger.swift */; };
 		69A0D2971DD5991D00227353 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2961DD5991D00227353 /* Reachability.swift */; };
 		69A0D2C31DD59CC000227353 /* String+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2C21DD59CC000227353 /* String+file.swift */; };
+		69B954701DDF6FBD006AF669 /* AxLoggerOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69B954741DDF6FC5006AF669 /* String+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2C21DD59CC000227353 /* String+file.swift */; };
+		69B954751DDF6FC8006AF669 /* ylog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2981DD5992700227353 /* ylog.m */; };
+		69B954761DDF6FCB006AF669 /* ylog.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2991DD5992700227353 /* ylog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69B954771DDF6FD0006AF669 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2961DD5991D00227353 /* Reachability.swift */; };
+		69B954781DDF6FD7006AF669 /* AxEnvHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2901DD5990F00227353 /* AxEnvHelper.swift */; };
+		69B954791DDF6FDC006AF669 /* AxLogFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2911DD5990F00227353 /* AxLogFile.swift */; };
+		69B9547A1DDF6FDF006AF669 /* AxLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2921DD5990F00227353 /* AxLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,9 @@
 		69A0D2981DD5992700227353 /* ylog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ylog.m; sourceTree = "<group>"; };
 		69A0D2991DD5992700227353 /* ylog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ylog.h; sourceTree = "<group>"; };
 		69A0D2C21DD59CC000227353 /* String+file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+file.swift"; sourceTree = "<group>"; };
+		69B9546C1DDF6FBD006AF669 /* AxLoggerOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxLoggerOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxLoggerOSX.h; sourceTree = "<group>"; };
+		69B9546F1DDF6FBD006AF669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +91,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		69A0D2811DD598F200227353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B954681DDF6FBD006AF669 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -107,6 +125,7 @@
 			children = (
 				69A0D2871DD598F200227353 /* AxLogger */,
 				6918835F1DDEA7A10051DAAE /* AxLoggerDemo */,
+				69B9546D1DDF6FBD006AF669 /* AxLoggerOSX */,
 				69A0D2861DD598F200227353 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +135,7 @@
 			children = (
 				69A0D2851DD598F200227353 /* AxLogger.framework */,
 				6918835E1DDEA7A00051DAAE /* AxLoggerDemo.app */,
+				69B9546C1DDF6FBD006AF669 /* AxLoggerOSX.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +156,15 @@
 			path = AxLogger;
 			sourceTree = "<group>";
 		};
+		69B9546D1DDF6FBD006AF669 /* AxLoggerOSX */ = {
+			isa = PBXGroup;
+			children = (
+				69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */,
+				69B9546F1DDF6FBD006AF669 /* Info.plist */,
+			);
+			path = AxLoggerOSX;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -145,6 +174,15 @@
 			files = (
 				69A0D28A1DD598F200227353 /* AxLogger.h in Headers */,
 				698A07E61DD59D78009BFFC9 /* ylog.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B954691DDF6FBD006AF669 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B954701DDF6FBD006AF669 /* AxLoggerOSX.h in Headers */,
+				69B954761DDF6FCB006AF669 /* ylog.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +226,24 @@
 			productReference = 69A0D2851DD598F200227353 /* AxLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		69B9546B1DDF6FBD006AF669 /* AxLoggerOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B954731DDF6FBD006AF669 /* Build configuration list for PBXNativeTarget "AxLoggerOSX" */;
+			buildPhases = (
+				69B954671DDF6FBD006AF669 /* Sources */,
+				69B954681DDF6FBD006AF669 /* Frameworks */,
+				69B954691DDF6FBD006AF669 /* Headers */,
+				69B9546A1DDF6FBD006AF669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AxLoggerOSX;
+			productName = AxLoggerOSX;
+			productReference = 69B9546C1DDF6FBD006AF669 /* AxLoggerOSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,6 +265,11 @@
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
+					69B9546B1DDF6FBD006AF669 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 745WQDK4L7;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 69A0D27F1DD598F200227353 /* Build configuration list for PBXProject "AxLogger" */;
@@ -226,6 +287,7 @@
 			targets = (
 				69A0D2841DD598F200227353 /* AxLogger */,
 				6918835D1DDEA7A00051DAAE /* AxLoggerDemo */,
+				69B9546B1DDF6FBD006AF669 /* AxLoggerOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +304,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		69A0D2831DD598F200227353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B9546A1DDF6FBD006AF669 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,6 +339,19 @@
 				69A0D2971DD5991D00227353 /* Reachability.swift in Sources */,
 				69A0D2C31DD59CC000227353 /* String+file.swift in Sources */,
 				69A0D2941DD5990F00227353 /* AxLogFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B954671DDF6FBD006AF669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69B9547A1DDF6FDF006AF669 /* AxLogger.swift in Sources */,
+				69B954751DDF6FC8006AF669 /* ylog.m in Sources */,
+				69B954791DDF6FDC006AF669 /* AxLogFile.swift in Sources */,
+				69B954741DDF6FC5006AF669 /* String+file.swift in Sources */,
+				69B954781DDF6FD7006AF669 /* AxEnvHelper.swift in Sources */,
+				69B954771DDF6FD0006AF669 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +557,52 @@
 			};
 			name = Release;
 		};
+		69B954711DDF6FBD006AF669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 745WQDK4L7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AxLoggerOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLoggerOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		69B954721DDF6FBD006AF669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 745WQDK4L7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AxLoggerOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLoggerOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -485,6 +613,7 @@
 				6918836E1DDEA7A10051DAAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69A0D27F1DD598F200227353 /* Build configuration list for PBXProject "AxLogger" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +632,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		69B954731DDF6FBD006AF669 /* Build configuration list for PBXNativeTarget "AxLoggerOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B954711DDF6FBD006AF669 /* Debug */,
+				69B954721DDF6FBD006AF669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
