@@ -75,7 +75,7 @@
 		69A0D2981DD5992700227353 /* ylog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ylog.m; sourceTree = "<group>"; };
 		69A0D2991DD5992700227353 /* ylog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ylog.h; sourceTree = "<group>"; };
 		69A0D2C21DD59CC000227353 /* String+file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+file.swift"; sourceTree = "<group>"; };
-		69B9546C1DDF6FBD006AF669 /* AxLoggerOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxLoggerOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69B9546C1DDF6FBD006AF669 /* AxLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxLoggerOSX.h; sourceTree = "<group>"; };
 		69B9546F1DDF6FBD006AF669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +135,7 @@
 			children = (
 				69A0D2851DD598F200227353 /* AxLogger.framework */,
 				6918835E1DDEA7A00051DAAE /* AxLoggerDemo.app */,
-				69B9546C1DDF6FBD006AF669 /* AxLoggerOSX.framework */,
+				69B9546C1DDF6FBD006AF669 /* AxLogger.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			);
 			name = AxLoggerOSX;
 			productName = AxLoggerOSX;
-			productReference = 69B9546C1DDF6FBD006AF669 /* AxLoggerOSX.framework */;
+			productReference = 69B9546C1DDF6FBD006AF669 /* AxLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -572,8 +572,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLoggerOSX;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLogger;
+				PRODUCT_NAME = AxLogger;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -595,8 +595,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLoggerOSX;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLogger;
+				PRODUCT_NAME = AxLogger;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -640,6 +640,7 @@
 				69B954721DDF6FBD006AF669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
