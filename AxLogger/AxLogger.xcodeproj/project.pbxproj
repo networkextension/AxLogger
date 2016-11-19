@@ -23,7 +23,7 @@
 		69A0D2951DD5990F00227353 /* AxLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2921DD5990F00227353 /* AxLogger.swift */; };
 		69A0D2971DD5991D00227353 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2961DD5991D00227353 /* Reachability.swift */; };
 		69A0D2C31DD59CC000227353 /* String+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2C21DD59CC000227353 /* String+file.swift */; };
-		69B954701DDF6FBD006AF669 /* AxLoggerOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69B954701DDF6FBD006AF669 /* AxLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 69B9546E1DDF6FBD006AF669 /* AxLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69B954741DDF6FC5006AF669 /* String+file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2C21DD59CC000227353 /* String+file.swift */; };
 		69B954751DDF6FC8006AF669 /* ylog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2981DD5992700227353 /* ylog.m */; };
 		69B954761DDF6FCB006AF669 /* ylog.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2991DD5992700227353 /* ylog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,7 +76,7 @@
 		69A0D2991DD5992700227353 /* ylog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ylog.h; sourceTree = "<group>"; };
 		69A0D2C21DD59CC000227353 /* String+file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+file.swift"; sourceTree = "<group>"; };
 		69B9546C1DDF6FBD006AF669 /* AxLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxLoggerOSX.h; sourceTree = "<group>"; };
+		69B9546E1DDF6FBD006AF669 /* AxLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxLogger.h; sourceTree = "<group>"; };
 		69B9546F1DDF6FBD006AF669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,7 +159,7 @@
 		69B9546D1DDF6FBD006AF669 /* AxLoggerOSX */ = {
 			isa = PBXGroup;
 			children = (
-				69B9546E1DDF6FBD006AF669 /* AxLoggerOSX.h */,
+				69B9546E1DDF6FBD006AF669 /* AxLogger.h */,
 				69B9546F1DDF6FBD006AF669 /* Info.plist */,
 			);
 			path = AxLoggerOSX;
@@ -181,7 +181,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69B954701DDF6FBD006AF669 /* AxLoggerOSX.h in Headers */,
+				69B954701DDF6FBD006AF669 /* AxLogger.h in Headers */,
 				69B954761DDF6FCB006AF669 /* ylog.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +571,7 @@
 				INFOPLIST_FILE = AxLoggerOSX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLogger;
 				PRODUCT_NAME = AxLogger;
 				SDKROOT = macosx;
@@ -594,7 +594,7 @@
 				INFOPLIST_FILE = AxLoggerOSX/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yarshure.AxLogger;
 				PRODUCT_NAME = AxLogger;
 				SDKROOT = macosx;

@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double AxLoggerOSXVersionNumber;
 FOUNDATION_EXPORT const unsigned char AxLoggerOSXVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AxLoggerOSX/PublicHeader.h>
-#import <AxLoggerOSX/ylog.h>
+#import <AxLogger/ylog.h>
 
