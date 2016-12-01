@@ -121,7 +121,7 @@ public class AxLogger:NSObject{
     public static func openLogging(_ baseURL:URL, date:Date,debug:Bool=false){
         let f:DateFormatter=DateFormatter()
         //f.dateFormat="yyyy/MM/dd HH:mm:ss.SSS" file name contain date
-        f.dateFormat="HH_mm_ss"
+        f.dateFormat="yyyy_MM_dd_HH_mm_ss"
         let session = f.string(from: date)
         let u  = baseURL.appendingPathComponent("Log/" + session + "/")
         
