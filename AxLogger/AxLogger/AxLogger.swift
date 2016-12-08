@@ -80,7 +80,7 @@ class AxLogDefaultFormater:AxLogFormater{
         #if os(iOS)
             let memory = memoryString(memoryUsed: reportMemoryUsed())
             #else
-            let memory = ""
+            let memory = memoryString(memoryUsed: reportMemoryUsed())
             #endif
         var  result:String = ""
 //        if level == .Debug {
