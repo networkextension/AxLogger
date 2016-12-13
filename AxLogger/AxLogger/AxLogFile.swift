@@ -107,8 +107,13 @@ public class AxLogFile{
     }
     func log(msg:String){
         self.exec{
-            if let cString = msg.cString(using: .utf8){
-                ylog_log0(&self.logctx, cString)
+            
+            if let  data = msg.data(using: .utf8){
+                _ = data.withUnsafeBytes( { (ptr:UnsafePointer) in
+                     ylog_log0(&self.logctx, ptr)
+                })
+                
+               
             }else {
                 ylog_log0(&self.logctx, "Error:convert to cString error!!!!!!!!!!!!")
             }

@@ -26,9 +26,30 @@ class ViewController: UIViewController {
         AxLogger.log("test", level: .Info)
         print(ur,stdout)
         NSLog("lsskdjflsjdflaksdjflkas %")
+        let leve = loglevel("trace")
+        print(leve.description)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func loglevel(_ levelStr:String) -> AxLoggerLevel {
+        
+        var level:AxLoggerLevel = .Info
+        let l = levelStr.lowercased()
+        
+        switch l {
+        case "error": level = .Error
+        case "warning": level = .Warning
+        case "info": level = .Info
+        case "notify": level = .Notify
+        case "trace": level = .Trace
+        case "verbose": level = .Verbose
+        case "debug": level = .Debug
+        default:
+            break
+        }
+        return level
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
