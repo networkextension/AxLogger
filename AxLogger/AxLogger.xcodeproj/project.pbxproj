@@ -13,7 +13,6 @@
 		691883681DDEA7A10051DAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691883671DDEA7A10051DAAE /* Assets.xcassets */; };
 		6918836B1DDEA7A10051DAAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691883691DDEA7A10051DAAE /* LaunchScreen.storyboard */; };
 		691883721DDEA7AD0051DAAE /* AxLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; };
-		691883731DDEA8EC0051DAAE /* AxLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; };
 		691883741DDEA8EC0051DAAE /* AxLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		698A07E51DD59D73009BFFC9 /* ylog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2981DD5992700227353 /* ylog.m */; };
 		698A07E61DD59D78009BFFC9 /* ylog.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2991DD5992700227353 /* ylog.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,7 +85,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				691883721DDEA7AD0051DAAE /* AxLogger.framework in Frameworks */,
-				691883731DDEA8EC0051DAAE /* AxLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +249,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Kong XiangBo";
 				TargetAttributes = {
 					6918835D1DDEA7A00051DAAE = {
@@ -262,7 +260,7 @@
 					69A0D2841DD598F200227353 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 745WQDK4L7;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					69B9546B1DDF6FBD006AF669 = {
@@ -422,7 +420,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -430,7 +430,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -475,7 +479,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -483,7 +489,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -531,7 +541,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -553,7 +564,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
