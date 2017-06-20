@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let ur  = self.applicationDocumentsDirectory.appendingPathComponent("abc")
         print(ur)
@@ -28,6 +29,11 @@ class ViewController: UIViewController {
         NSLog("lsskdjflsjdflaksdjflkas %")
         let leve = loglevel("trace")
         print(leve.description)
+        
+        
+        SFLogger.shared.openHandle(path: "/Users/yarshure/xx.txt")
+         SFLogger.logleve = .Debug
+        SFLogger.log("Test", items: "aaa","bbc",ur, level: .Debug)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

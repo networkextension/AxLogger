@@ -13,8 +13,9 @@
 		691883681DDEA7A10051DAAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 691883671DDEA7A10051DAAE /* Assets.xcassets */; };
 		6918836B1DDEA7A10051DAAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 691883691DDEA7A10051DAAE /* LaunchScreen.storyboard */; };
 		691883721DDEA7AD0051DAAE /* AxLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; };
-		691883731DDEA8EC0051DAAE /* AxLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; };
 		691883741DDEA8EC0051DAAE /* AxLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A0D2851DD598F200227353 /* AxLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		692805CF1EF9196B007FCF6A /* SFLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692805CE1EF9196B007FCF6A /* SFLoger.swift */; };
+		692805D01EF9196B007FCF6A /* SFLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692805CE1EF9196B007FCF6A /* SFLoger.swift */; };
 		698A07E51DD59D73009BFFC9 /* ylog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A0D2981DD5992700227353 /* ylog.m */; };
 		698A07E61DD59D78009BFFC9 /* ylog.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2991DD5992700227353 /* ylog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69A0D28A1DD598F200227353 /* AxLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A0D2881DD598F200227353 /* AxLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,6 +66,7 @@
 		691883671DDEA7A10051DAAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6918836A1DDEA7A10051DAAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6918836C1DDEA7A10051DAAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		692805CE1EF9196B007FCF6A /* SFLoger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLoger.swift; sourceTree = "<group>"; };
 		69A0D2851DD598F200227353 /* AxLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A0D2881DD598F200227353 /* AxLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxLogger.h; sourceTree = "<group>"; };
 		69A0D2891DD598F200227353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,7 +88,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				691883721DDEA7AD0051DAAE /* AxLogger.framework in Frameworks */,
-				691883731DDEA8EC0051DAAE /* AxLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +151,7 @@
 				69A0D2901DD5990F00227353 /* AxEnvHelper.swift */,
 				69A0D2911DD5990F00227353 /* AxLogFile.swift */,
 				69A0D2921DD5990F00227353 /* AxLogger.swift */,
+				692805CE1EF9196B007FCF6A /* SFLoger.swift */,
 				69A0D2881DD598F200227353 /* AxLogger.h */,
 				69A0D2891DD598F200227353 /* Info.plist */,
 			);
@@ -251,7 +253,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Kong XiangBo";
 				TargetAttributes = {
 					6918835D1DDEA7A00051DAAE = {
@@ -335,6 +337,7 @@
 			files = (
 				698A07E51DD59D73009BFFC9 /* ylog.m in Sources */,
 				69A0D2951DD5990F00227353 /* AxLogger.swift in Sources */,
+				692805CF1EF9196B007FCF6A /* SFLoger.swift in Sources */,
 				69A0D2931DD5990F00227353 /* AxEnvHelper.swift in Sources */,
 				69A0D2971DD5991D00227353 /* Reachability.swift in Sources */,
 				69A0D2C31DD59CC000227353 /* String+file.swift in Sources */,
@@ -348,6 +351,7 @@
 			files = (
 				69B9547A1DDF6FDF006AF669 /* AxLogger.swift in Sources */,
 				69B954751DDF6FC8006AF669 /* ylog.m in Sources */,
+				692805D01EF9196B007FCF6A /* SFLoger.swift in Sources */,
 				69B954791DDF6FDC006AF669 /* AxLogFile.swift in Sources */,
 				69B954741DDF6FC5006AF669 /* String+file.swift in Sources */,
 				69B954781DDF6FD7006AF669 /* AxEnvHelper.swift in Sources */,

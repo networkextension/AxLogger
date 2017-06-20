@@ -98,6 +98,7 @@ class AxLogDefaultFormater:AxLogFormater{
         
         return result
     }
+    
 }
 
 public class AxLogger:NSObject{
