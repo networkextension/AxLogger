@@ -20,17 +20,12 @@ import SystemConfiguration
     static var reachAiblity =  Reachability()
 #endif
     @objc public static func platform() -> String {
-//        var systemInfo = [UInt8](repeating: 0, count: MemoryLayout<utsname>.size)
-//        let model = systemInfo.withUnsafeMutableBufferPointer { ( body: inout UnsafeMutableBufferPointer<UInt8>) -> String? in
-//            if uname(UnsafeMutablePointer(body.baseAddress)) != 0 {
-//                return nil
-//            }
-//            return String.fromCString(UnsafePointer(body.baseAddress.advancedBy(Int(_SYS_NAMELEN * 4))))
-//        }
-//        if let model = model{
-//            return model
-//        }
-        return ""
+        var size : Int = 0
+        sysctlbyname("hw.machine", nil, &size, nil, 0)
+        var machine = [CChar](repeating: 0, count: Int(size))
+        sysctlbyname("hw.machine", &machine, &size, nil, 0)
+        let platform : String = String(cString: machine)
+        return platform
     }
     @objc public static func systemName() ->String{
 #if os(iOS)

@@ -38,7 +38,10 @@ public class SFLogger:TextOutputStream {
     public  func write(_ string: String){
         if isOpen {
             //write(fd, string, string.characters.count)
-            writeLog(fd, string, string.characters.count)
+            queue.async {
+                writeLog(self.fd, string, string.characters.count)
+            }
+            
         }
         
     }
@@ -46,7 +49,7 @@ public class SFLogger:TextOutputStream {
     
     static var logFormater = AxLogDefaultFormater()//= .Debug
     
-    static public func log(_ msg:String,items: Any...,level:AxLoggerLevel , category:String="default",file:String=#file,line:Int=#line,ud:[String:String]=[:],tags:[String]=[],time:Date=Date()){
+    static public func log(_ msg:String,items: Any,level:AxLoggerLevel , category:String="default",file:String=#file,line:Int=#line,ud:[String:String]=[:],tags:[String]=[],time:Date=Date()){
         
         //other level
         
@@ -58,7 +61,7 @@ public class SFLogger:TextOutputStream {
             }
         }
     }
-    func formate(msg:String,items: Any...,level:AxLoggerLevel,category:String,file:String,line:Int,ud:[String:String],tags:[String],time:Date) {
+    func formate(msg:String,items: Any,level:AxLoggerLevel,category:String,file:String,line:Int,ud:[String:String],tags:[String],time:Date) {
         let timestr = self.df.string(from: time)
         
         //let filename = file.NS.lastPathComponent
@@ -71,10 +74,12 @@ public class SFLogger:TextOutputStream {
             let memory = memoryString(memoryUsed: reportMemoryUsed())
         #endif
         var logger = SFLogger.shared
+        
         if debugEnable{
-            print(timestr, level.description,"[", processinfo.processIdentifier, "]:\(threadid)"," mem:\(memory)", msg ,items, to: &logger) //\(category) \(filename)[\(line)]
+            print(timestr, level.description,"[", processinfo.processIdentifier, "]:\(threadid)"," mem:\(memory)", msg ,items,separator:" ", to: &logger) //\(category) \(filename)[\(line)]
         }else{
-            print(timestr, level.description, " mem:\(memory)" , msg,items,to:&logger)
+            print(timestr, level.description, " mem:\(memory)" , msg,items,separator:" ",to:&logger)
+          
         }
         
         

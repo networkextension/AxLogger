@@ -26,14 +26,18 @@ class ViewController: UIViewController {
         AxLogger.log("test", level: .Debug)
         AxLogger.log("test", level: .Info)
         print(ur,stdout)
-        NSLog("lsskdjflsjdflaksdjflkas %")
+        NSLog("lsskdjflsjdflaksdjflkas %") //stdout.log
         let leve = loglevel("trace")
         print(leve.description)
         
         
         SFLogger.shared.openHandle(path: "/Users/yarshure/xx.txt")
          SFLogger.logleve = .Debug
-        SFLogger.log("Test", items: "aaa","bbc",ur, level: .Debug)
+        let env = AxEnvHelper.infoDict()
+        let data = "saldkfjskldfjdslfjklsadjfkladsj".data(using: .utf8)!
+        SFLogger.log("Env", items: env, level: .Info)
+        SFLogger.log("Env", items: data as NSData, level: .Info)
+        SFLogger.log("Test", items: ur, level: .Debug)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
