@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias AxLoggerCompleteCb = (Void) -> Void
+typealias AxLoggerCompleteCb = () -> Void
 
 public class AxLogFile{
     private var queue:DispatchQueue?
