@@ -36,6 +36,6 @@ void ylog_log2(ylog_context *ctx,ylog_level level,char *format,...);
 void ylog_log3(ylog_context *ctx,char *category,char *file,int line,ylog_level level,char *format,...);
 #define ylog_log4(ctx,category,level,fmt,...) do{ylog_log3(ctx,category,__FILE__,__LINE__,level,fmt,##__VA_ARGS__);}while(0)
 void ylog_close(ylog_context *ctx);
-uint64_t reportMemoryUsed();
+uint64_t reportMemoryUsed(void);
 NSString* objectClassString(id obj);
 #endif /* defined(__ylog__ylog__) */

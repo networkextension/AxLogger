@@ -73,7 +73,7 @@ void ylog_close(ylog_context *ctx){
     fclose(ctx->file);
     ctx->isopen=0;
 }
-uint64_t reportMemoryUsed()
+uint64_t reportMemoryUsed(void)
 {
     task_vm_info_data_t vmInfo;
     mach_msg_type_number_t count = TASK_VM_INFO_COUNT;

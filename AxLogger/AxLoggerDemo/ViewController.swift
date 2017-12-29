@@ -31,13 +31,13 @@ class ViewController: UIViewController {
         print(leve.description)
         
         
-        SFLogger.shared.openHandle(path: "/Users/yarshure/xx.txt")
-         SFLogger.logleve = .Debug
-        let env = AxEnvHelper.infoDict()
-        let data = "saldkfjskldfjdslfjklsadjfkladsj".data(using: .utf8)!
-        SFLogger.log("Env", items: env, level: .Info)
-        SFLogger.log("Env", items: data as NSData, level: .Info)
-        SFLogger.log("Test", items: ur, level: .Debug)
+//        SFLogger.shared.openHandle(path: "/Users/yarshure/xx.txt")
+//         SFLogger.logleve = .Debug
+//        let env = AxEnvHelper.infoDict()
+//        let data = "saldkfjskldfjdslfjklsadjfkladsj".data(using: .utf8)!
+//        SFLogger.log("Env", items: env, level: .Info)
+//        SFLogger.log("Env", items: data as NSData, level: .Info)
+//        SFLogger.log("Test", items: ur, level: .Debug)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
