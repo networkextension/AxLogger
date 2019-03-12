@@ -101,18 +101,21 @@ public class AxLogFile{
         }
     }
     func rawLog(data:Data){
-//        self.exec{
-//            ylog_raw(&self.logctx, UnsafePointer<Int8>(data.bytes), UInt32(data.length))
-//        }
+        self.exec{
+            //ylog_raw(&self.logctx, UnsafePointer<Int8>(data.bytes), UInt32(data.length))
+            _ =  data.withUnsafeBytes({ (ptr:UnsafeRawBufferPointer) in
+                let p = ptr.bindMemory(to: Int8.self)
+                ylog_log0(&self.logctx, p.baseAddress)
+            })
+        }
     }
     func log(msg:String){
         self.exec{
-            if let cString = msg.cString(using: .utf8){
-                ylog_log0(&self.logctx, cString)
-            }else {
-                ylog_log0(&self.logctx, "Error:convert to cString error!!!!!!!!!!!!")
-            }
-            
+            guard let data = msg.data(using: String.Encoding.utf8) else { return  }
+            _ =  data.withUnsafeBytes({ (ptr:UnsafeRawBufferPointer) in
+                let p = ptr.bindMemory(to: Int8.self)
+                ylog_log0(&self.logctx, p.baseAddress)
+            })
         }
     }
 }
