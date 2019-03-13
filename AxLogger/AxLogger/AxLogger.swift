@@ -71,7 +71,7 @@ class AxLogDefaultFormater:AxLogFormater{
     var debugEnable:Bool = false
     
     func formate(msg:String,level:AxLoggerLevel,category:String,file:String,line:Int,ud:[String:String],tags:[String],time:Date) -> String{
-        let timestr =  Date.timeIntervalBetween1970AndReferenceDate //self.df.string(from: time)
+        let timestr =  String.init(format: "%.3f", Date().timeIntervalSince1970) //self.df.string(from: time)
         
         //let filename = file.NS.lastPathComponent
         let processinfo = ProcessInfo.processInfo
