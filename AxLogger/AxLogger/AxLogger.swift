@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import cbrideg
 @objc public enum AxLoggerLevel:Int,CustomStringConvertible{
     // 调整优先级
     case Error = 0

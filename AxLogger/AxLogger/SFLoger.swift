@@ -8,6 +8,7 @@
 
 import Foundation
 import Darwin
+import cbrideg
 func writeLog(_ __fd: Int32, _ __buf: UnsafeRawPointer!, _ __nbyte: Int) {
     write(__fd,__buf,__nbyte)
 }
@@ -39,7 +40,7 @@ public class SFLogger:TextOutputStream {
         if isOpen {
             //write(fd, string, string.characters.count)
             queue.async {
-                writeLog(self.fd, string, string.characters.count)
+                writeLog(self.fd, string, string.count)
             }
             
         }

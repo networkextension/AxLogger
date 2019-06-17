@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import cbrideg
 typealias AxLoggerCompleteCb = () -> Void
 
 public class AxLogFile{
