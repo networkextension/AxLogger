@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Start xcodebuild test
-      run: xcodebuild build
+      run: xcodebuild build  -project AxLogger/AxLogger.xcodeproj
