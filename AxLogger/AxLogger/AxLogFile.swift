@@ -101,9 +101,13 @@ public class AxLogFile{
         }
     }
     func rawLog(data:Data){
-//        self.exec{
-//            ylog_raw(&self.logctx, UnsafePointer<Int8>(data.bytes), UInt32(data.length))
-//        }
+        self.exec{
+            //ylog_raw(&self.logctx, UnsafePointer<Int8>(data.bytes), UInt32(data.length))
+            _ =  data.withUnsafeBytes({ (ptr:UnsafeRawBufferPointer) in
+                let p = ptr.bindMemory(to: Int8.self)
+                ylog_log0(&self.logctx, p.baseAddress)
+            })
+        }
     }
     func log(msg:String){
         self.exec{
@@ -112,7 +116,6 @@ public class AxLogFile{
             }else {
                 ylog_log0(&self.logctx, "Error:convert to cString error!!!!!!!!!!!!")
             }
-            
         }
     }
 }

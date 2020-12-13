@@ -41,16 +41,16 @@ extension String{
     }
 }
 public extension NSString{
-    @objc public func fileSize() -> UInt64{
+    @objc func fileSize() -> UInt64{
         return ( self as String).fileSize()
     }
-    @objc public func fileExist() -> Bool{
+    @objc func fileExist() -> Bool{
         return (self as String).fileExist()
     }
-    @objc public func dirCreate() ->Bool{
+    @objc func dirCreate() ->Bool{
         return (self as String).dirCreate()
     }
-    @objc public func fileDelete() ->Bool{
+    @objc func fileDelete() ->Bool{
         return (self as String).fileDelete()
     }
 }
